@@ -1,0 +1,17 @@
+//对象类型
+interface Person {
+  name: string;
+  age?: number;
+  [gggg: number]: any;
+}
+let d = 3;
+let tom: Person = {
+  name: "Tom",
+  [d]: "male",
+};
+
+//数组类型
+interface NumberArray {
+  [indezx: number]: number;
+}
+let fibonacci: NumberArray = [1, 1, 2, 3, 5];

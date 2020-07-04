@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+ 
+  <script>
+class Model1 {
+  n = 33;
+  getData() {
+    // 此处省略获取数据的逻辑
+    return [{
+      id: 1,
+      name: 'Niko'
+    }, {
+      id: 2,
+      name: 'Bellic'
+    }]
+  }
+}
+
+console.log(new Model1() )    // [ { id: 1, name: 'Niko'}, { id: 2, name: 'Bellic' } ]
+console.log(Model1.prototype.getData())
+
+  </script>
+</body>
+</html>

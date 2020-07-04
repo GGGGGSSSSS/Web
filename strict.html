@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      console.log("严格模式");
+      console.log("在全局作用域中函数中的this");
+      function f1() {
+        console.log(this);
+      }
+
+      function f2() {
+        function f3() {
+          console.log(this);
+        }
+        f3();
+      }
+      window.f1();
+      f2();
+    </script>
+  </body>
+</html>
