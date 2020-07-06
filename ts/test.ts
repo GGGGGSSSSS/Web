@@ -15,3 +15,9 @@ interface NumberArray {
   [indezx: number]: number;
 }
 let fibonacci: NumberArray = [1, 1, 2, 3, 5];
+
+let u: undefined = undefined;
+let n: null = null;
+u = null;
+n = undefined;
+let z: Array<Person>;

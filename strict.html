@@ -7,22 +7,33 @@
   </head>
   <body>
     <script>
-      "use strict";
+            "use strict";
 
-      console.log("严格模式");
-      console.log("在全局作用域中函数中的this");
-      function f1() {
-        console.log(this);
-      }
+            console.log("严格模式");
+            console.log("在全局作用域中函数中的this");
+            function f1() {
+              console.log(this);
+            }
 
-      function f2() {
-        function f3() {
-          console.log(this);
-        }
-        f3();
+            function f2() {
+              function f3() {
+                console.log(this);
+              }
+              f3();
+            }
+            window.f1();
+            f2();
+
+      // body下的 <div id="v" class="classA"><div> 对应的 oldVnode 就是
+
+      {
+        el:  div  //对真实的节点的引用，本例中就是document.querySelector('#id.classA')
+        tagName: 'DIV',   //节点的标签
+        sel: 'div#v.classA'  //节点的选择器
+        data: null,       // 一个存储节点属性的对象，对应节点的el[prop]属性，例如onclick , style
+        children: [], //存储子节点的数组，每个子节点也是vnode结构
+        text: null,    //如果是文本节点，对应文本节点的textContent，否则为null
       }
-      window.f1();
-      f2();
     </script>
   </body>
 </html>

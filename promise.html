@@ -7,25 +7,13 @@
   </head>
   <body>
     <script>
-          console.log('script start');
-
-      setTimeout(function () {
-        console.log('setTimeout');
-      }, 0);
-
       Promise.resolve()
         .then(function () {
-          console.log('promise1');
-        }).then((function () {
-          console.log('promise3');
+          console.log("promise1");
         })
         .then(function () {
-          console.log('promise2');
-        }).then((function () {
-          console.log('promise4');
-        })
-
-      console.log('script end');
+          console.log("promise2");
+        });
     </script>
   </body>
 </html>
