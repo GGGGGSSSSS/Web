@@ -10,6 +10,8 @@ let tom: Person = {
   [d]: "male",
 };
 
+//       -----ctrl shift + B 把ts编译成js
+
 //数组类型
 interface NumberArray {
   [indezx: number]: number;
