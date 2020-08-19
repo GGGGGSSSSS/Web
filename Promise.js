@@ -266,7 +266,15 @@ es5定义模块方法: 匿名函数(自)调用
         reject(value);
       }, time);
     });
-  };    
+  };
 
   window.Promise = Promise;
 })(window);
+
+asyAdd = () => {
+  store.dispatch((dispatch) => {
+    setTimeout(() => {
+      dispatch({ type: "ADD" });
+    }, 1000);
+  });
+};

@@ -7,21 +7,20 @@
   </head>
   <body>
     <script>
-      function z(params) {}
-      console.dir(
-        class Point {
-          constructor(x, y) {
-            this.x = x;
-            this.y = y;
-          }
+      class Point {
+        e = 6;
+        constructor(x, y) {
+          let e = 5;
+          this.x = x;
+          this.y = y;
+        }
 
-          toString() {
-            return "(" + this.x + ", " + this.y + ")";
-          }
-        },
-        z
-      );
-      console.dir(z);
+        toString() {
+          return "(" + this.x + ", " + this.y + ")";
+        }
+      }
+      console.dir(new Point(), Point);
+      console.dir(Point);
     </script>
   </body>
 </html>
