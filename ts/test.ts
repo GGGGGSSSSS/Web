@@ -39,3 +39,6 @@ let mySearch: SearchFunc;
 mySearch = function (sdource: string, subString: string) {
   return sdource.search(subString) !== -1;
 };
+
+//元组: 更加详细的数组类型
+let tomc: [string, string] = ["Tom", "25"];
