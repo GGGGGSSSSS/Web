@@ -8,33 +8,32 @@
   <body>
     <script>
       //----------------常规与微队列比较
-      Promise.resolve(3).then((value) => {
-        // 会立即放入微列队
-        console.log("Promise onResolved3()", value);
-      });
-      console.log("1"); //会先输出"1" 然后才是"Promise onResolved3()"
+      // Promise.resolve(3).then((value) => {
+
+      //   console.log("Promise onResolved3()", value);
+      // });
+      // console.log("1");
 
       //----------------宏队列与微队列比较
       setTimeout(() => {
-        // 会立即放入宏列队
         console.log("timeout callback1()");
-        // 每次准备取出第一个宏任务执行前,都要将所有的微任务一个一个取出来执行
+
         Promise.resolve(3).then((value) => {
-          // 会立即放入微列队
           console.log("Promise onResolved3()", value);
         });
+        console.log("timeout callback11()");
       }, 0);
       setTimeout(() => {
-        // 会立即放入宏列队
         console.log("timeout callback2()");
       }, 0);
       Promise.resolve(1).then((value) => {
-        // 会立即放入微列队
         console.log("Promise onResolved1()", value);
       });
       Promise.resolve(2).then((value) => {
-        // 会立即放入微列队
         console.log("Promise onResolved2()", value);
+        setTimeout(() => {
+          console.log("timeout callback3()");
+        });
       });
     </script>
   </body>

@@ -8,34 +8,23 @@
   </head>
   <body>
     <script>
-            var zz = 2;
-            function fn1() {
-              var zz = 3;
-              function z() {
-                var er = 3;
-                zz = 4;
-              }
+      var zz = 2;
+      function fn1() {
+        var zz = 3;
+        function z() {
+          var er = 3;
+          zz = 4;
+        }
 
-              return function fn2() {
-                console.log(zz);
-              };
-              fn2(88);
-            }
+        return function fn2() {
+          console.log(zz);
+        };
+        fn2(88);
+      }
 
-            var z = fn1();
-            zz = 3;
-            z();
-            查看分支：git branch
-
-      创建分支：git branch <name>
-
-      切换分支：git checkout <name>或者git switch <name>
-
-      创建+切换分支：git checkout -b <name>或者git switch -c <name>
-
-      合并某分支到当前分支：git merge <name>
-
-      删除分支：git branch -d <name>
+      var z = fn1();
+      zz = 3;
+      z();
     </script>
   </body>
 </html>
