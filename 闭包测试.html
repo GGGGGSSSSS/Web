@@ -10,15 +10,13 @@
     <script>
       var zz = 2;
       function fn1() {
-        var zz = 3;
+        var zz = {zz:3,er:3};
         function z() {
           var er = 3;
-          zz = 4;
+          zz.zz = 4;
         }
 
-        return function fn2() {
-          console.log(zz);
-        };
+        return z
         fn2(88);
       }
 

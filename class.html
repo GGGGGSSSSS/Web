@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      class Point {
-        e = 6;
-        constructor(x, y) {
-          let e = 5;
-          this.x = x;
-          this.y = y;
-        }
 
-        toString() {
-          return "(" + this.x + ", " + this.y + ")";
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class foo {
+      e = 6;
+      ii;
+      constructor(x, y) {
+        // this.e = 5;
+        this.x = x;
+        this.y = y;
       }
-      console.dir(new Point(), Point);
-      console.dir(Point);
-    </script>
-  </body>
+
+      // toString() {
+      //   return "(" + this.x + ", " + this.y + ")";
+      // }
+    }
+    class Point extends foo {
+      // e = 4;
+      constructor(x, y) {
+        super()
+        // let e = 5;
+        this.x = x;
+        this.y = y;
+        this.e = x;
+      }
+
+      toString() {
+        return "(" + this.x + ", " + this.y + ")";
+      }
+    }
+
+    console.log(new Point(), '1');
+    console.log(Point.toString());
+  </script>
+</body>
+
 </html>

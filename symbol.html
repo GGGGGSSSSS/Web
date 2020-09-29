@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = {};
+        const element = {}
+        const ii = {}
+        let uu = false
+        let zz = Symbol()
+        let gg = Symbol()
+        data[uu] = '333333'
+        data[element] = 'metadata';
+        data[ii] = 'metadata2';
+        data[zz] = 'zz'
+        data[gg] = 'uu'
+        data['[object Object]'] = '33'
+
+        console.log(data[element], data[uu] /* typeof data, data instanceof Object*/ );
+    </script>
+</body>
+
+</html>

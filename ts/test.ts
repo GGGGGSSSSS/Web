@@ -1,4 +1,8 @@
 // TypeScript是对数据类型的规范 :
+//基本类型:
+let q: any
+q = Error('2')
+
 // 对象的类型——接口:
 interface Person {
   name: string;
@@ -40,5 +44,16 @@ mySearch = function (sdource: string, subString: string) {
   return sdource.search(subString) !== -1;
 };
 
+
+let createArray = function <T>(length: number, value: T): Array<T> {
+  let result: T[] = [];
+  for (let i = 0; i < length; i++) {
+    result[i] = value;
+  }
+  return result;
+}
+
 //元组: 更加详细的数组类型
 let tomc: [string, string] = ["Tom", "25"];
+
+let fibonacc: number[]
