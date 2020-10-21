@@ -10,35 +10,36 @@
 <body>
   <script>
     class foo {
-      e = 6;
-      ii;
-      constructor(x, y) {
+      a = 1;
+      b = 2;
+      constructor(a, b) {
         // this.e = 5;
-        this.x = x;
-        this.y = y;
-      }
-
-      // toString() {
-      //   return "(" + this.x + ", " + this.y + ")";
-      // }
-    }
-    class Point extends foo {
-      // e = 4;
-      constructor(x, y) {
-        super()
-        // let e = 5;
-        this.x = x;
-        this.y = y;
-        this.e = x;
+        // this.a = a;
+        // this.b = b;
       }
 
       toString() {
         return "(" + this.x + ", " + this.y + ")";
       }
     }
+    class Point extends foo {
+      x = 5;
+      y = 4;
+      z = 3;
+      constructor(x, y) {
+        super(x, y)
+        this.x = x;
+        this.y = y;
+        this.e = x;
+      }
+
+      // toString() {
+      //   return "(" + this.x + ", " + this.y + ")";
+      // }
+    }
 
     console.log(new Point(), '1');
-    console.log(Point.toString());
+    // console.log(Point.toString());
   </script>
 </body>
 

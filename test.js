@@ -1,8 +1,6 @@
-var EventEmitter = require('events').EventEmitter; 
-var event = new EventEmitter(); 
-event.on('some_event', function() { 
-    console.log('some_event 事件触发'); 
-}); 
-setTimeout(function() { 
-    event.emit('some_event'); 
-}, 1000);
+const object1 = {};
+Object.defineProperty(object1, 'property1', {
+    value: 42,
+    writable: false
+});
+object1.property1 = 77;
