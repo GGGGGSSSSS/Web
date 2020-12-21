@@ -17,12 +17,17 @@
         let gg = Symbol()
         data[uu] = '333333'
         data[element] = 'metadata';
+        console.log(data[element])
         data[ii] = 'metadata2';
+        console.log(data[element])
         data[zz] = 'zz'
         data[gg] = 'uu'
         data['[object Object]'] = '33'
 
-        console.log(data[element], data[uu] /* typeof data, data instanceof Object*/ );
+        console.log(data[element], data[uu], data[zz], data[gg] /* typeof data, data instanceof Object*/);
+        //学flutter之后会知道即使是object类型也有子类型 有symbol key的obj的符号表不同于普通obj
+        //普通obj的key只是字符串 但是有symbol做key值的obj有一个不同与字符串类型的唯一值作为key
+        //所以symbol有一个必要属性: 唯一的value值
     </script>
 </body>
 
