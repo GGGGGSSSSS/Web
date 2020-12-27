@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="./test.js"></script>
-  </head>
-  <body>
-    <script>
-      var zz = 2;
-      function fn1() {
-        var zz = {zz:3,er:3};
-        function z() {
-          var er = 3;
-          zz.zz = 4;
-        }
 
-        return z
-        fn2(88);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="./test.js"></script>
+</head>
+
+<body>
+  <script>
+    var zz = 2;
+    function fn1() {
+      var zz = { zz: 3, er: 3 };
+      function z() {
+        var er = 3;
+        zz.zz = 4;
       }
 
-      var z = fn1();
-      zz = 3;
-      z();
-    </script>
-  </body>
+      return z
+      fn2(88);
+    }
+
+    var z = fn1();
+    zz = 3;
+    z();
+  </script>
+</body>
+
 </html>

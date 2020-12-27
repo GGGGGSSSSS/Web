@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function* helloWorldGenerator() {
+      yield 'hello';
+      let z = yield 'world';
+      return z;
+    }
+
+    var hw = helloWorldGenerator();
+    // hw 是一个函数的ip地址对象 可以通过hw.next()向寄存器传入参数继续执行
+  </script>
+</body>
+
+</html>

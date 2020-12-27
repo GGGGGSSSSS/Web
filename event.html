@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function zz(param) {
+      console.log(this)
+    }
+    function show_coords(event) {
+      x = event.clientX
+      y = event.clientY
+      alert("X 坐标: " + x + ", Y 坐标: " + y)
+    }
+  </script>
+</head>
+
+<body>
+  <a href="#" onclick="console.log('The link was clicked.'); return false">
+    Click me
+  </a>
+  <button onclick="zz();console.log(1)">button</button>
+  <input type="button" onmousedown="show_coords(event)">
+</body>
+
+</html>
