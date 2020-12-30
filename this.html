@@ -9,16 +9,19 @@
 
 <body>
   <script>
-    let zz = {
-      r() {
-        console.log(this)
+
+    let o = {
+      f: () => console.log(this)
+    }
+    y = () => console.log(this)
+    //箭头函数this指向是在声明作用域就确定的 且不被call等影响 
+    var obj = {
+      z: function () {
+        return o.f();
       }
-    }
-    function f(func) {
-      func()
-    }
-    zz.r()
-    // f(zz.r)
+    };
+    console.log(obj.z(), y())
+    //箭头函数的this只与声明作用域有关 无关调用作用域
   </script>
 </body>
 

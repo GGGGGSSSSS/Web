@@ -2,44 +2,66 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 
 <body>
   <script>
-    class foo {
-      a = 1;
-      b = 2;
-      constructor(a, b) {
-        // this.e = 5;
-        // this.a = a;
-        // this.b = b;
+    class Bork {
+      constructor() {
+        a = 3
       }
+      boundFunction = () => {
+        return this.instanceProperty;
+      };
+    }
+    //constructor的this指向实例去构造实例 boundFunction这些也和constructor一样是属性初始化 效果如classTest.html
 
-      toString() {
-        return "(" + this.x + ", " + this.y + ")";
+    //------------下面为上面类babel转换过来的语法
+    function _instanceof(left, right) {
+      if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) {
+        return !!right[Symbol.hasInstance](left);
+      } else {
+        return left instanceof right;
       }
     }
-    class Point extends foo {
-      // x = 5;
-      // y = 4;
-      // z = 3;
-      constructor(x, y) {
-        super(x, y)
-        this.x = x;
-        this.y = y;
-        this.e = x;
-      }
 
-      // toString() {
-      //   return "(" + this.x + ", " + this.y + ")";
-      // }
+    function _classCallCheck(instance, Constructor) {
+      if (!_instanceof(instance, Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+      }
     }
 
-    console.log(new Point(), '1');
-    // console.log(Point.toString());
+    function _defineProperty(obj, key, value) {
+      if (key in obj) {
+        Object.defineProperty(obj, key, {
+          value: value,
+          enumerable: true,
+          configurable: true,
+          writable: true
+        });
+      } else {
+        obj[key] = value;
+      } return obj;
+    }
+
+    var Bork = function Bork() {
+      var _this = this;
+
+      _classCallCheck(this, Bork);
+
+      _defineProperty(this, "u", void 0);
+
+      _defineProperty(this, "boundFunction", function () {
+        console.log(_this === u);
+      });
+
+      var a = 4;
+      this.a = a;
+    };
+
   </script>
 </body>
 
