@@ -2,21 +2,40 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
-  <title>document示例</title>
+  <title>遍历打印一个元素的所有属性</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <script type="text/javascript">
-
+    //获取DOM的所有属性
+    function getDomValues() {
+      //获取链接的DOM
+      var myLink = document.getElementById("div");
+      var str = '';                //结果拼接
+      for (var prop in myLink) {    //循环遍历myLink的所有属性key
+        //拼接到str，key和value用冒号隔开
+        str += prop + " : " + myLink[prop] + "<br/>";
+      }
+      //打印到网页里
+      document.getElementById("valuesP").innerHTML = str;
+    }
   </script>
+  <style>
+    #div:before {
+      content: "33";
+    }
+  </style>
 </head>
 
-<body style="margin:0px;padding: 4px;">
-  <div style="height:40px;"></div>
-  <p>222222222222</p>
-  <p>222</p>
-  <span style="display:inline-block;width: 40px;height: 40px;">33</span><span
-    style="height: 90px;width: 40;">555</span><a href="">2222</a>
-  <label for="">3333</label>
-  <div style="height: 40px;"></div>
+<body style="text-align:center">
+  <p>
+    <!-- 定义链接和按钮 -->
+  <div id="div">
+    <a id="myLink" href="#">链接</a>
+  </div>
+  <br />
+  <input type="button" value="获取链接DOM的属性" onclick="getDomValues();" />
+  </p>
+  <!-- 用于放置结果的p标签 -->
+  <p id="valuesP" style="text-align:left;"></p>
 </body>
 
 </html>

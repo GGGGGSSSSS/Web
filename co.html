@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function* fn() {
+      yield new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log(1)
+          resolve(1)
+        }, 500);
+      })
+      yield new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log(2)
+          resolve(2)
+        }, 500);
+      })
+      yield new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log(3)
+          resolve(3)
+        }, 500);
+      })
+    }
+    co(fn)
+    function co(fn) {
+      let f = fn()
+      next()
+      function next() {
+        let result = f.next()
+        console.log(result)
+        if (!result.done) {
+          result.value.then(() => {
+            next()
+          })
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

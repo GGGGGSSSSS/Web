@@ -14,9 +14,39 @@
       let z = yield 'world';
       return z;
     }
+    let a, b = 4
+    a = b = 3
 
     var hw = helloWorldGenerator();
     // hw 是一个函数的ip地址对象 可以通过hw.next()向寄存器传入参数继续执行
+
+
+    var _marked = /*#__PURE__*/regeneratorRuntime.mark(helloWorldGenerator);
+
+    function helloWorldGenerator() {
+      var z;
+      return regeneratorRuntime.wrap(function helloWorldGenerator$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return 'hello';
+
+            case 2:
+              _context.next = 4;
+              return 'world';
+
+            case 4:
+              z = _context.sent;
+              return _context.abrupt("return", z);
+
+            case 6:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _marked);
+    }
   </script>
 </body>
 

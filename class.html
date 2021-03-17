@@ -11,10 +11,9 @@
   <script>
     class Bork {
       constructor() {
-        a = 3
       }
       boundFunction = () => {
-        return this.instanceProperty;
+        return a;
       };
     }
     //constructor的this指向实例去构造实例 boundFunction这些也和constructor一样是属性初始化 效果如classTest.html
@@ -48,18 +47,11 @@
     }
 
     var Bork = function Bork() {
-      var _this = this;
-
       _classCallCheck(this, Bork);
 
-      _defineProperty(this, "u", void 0);
-
       _defineProperty(this, "boundFunction", function () {
-        console.log(_this === u);
+        return a;
       });
-
-      var a = 4;
-      this.a = a;
     };
 
   </script>

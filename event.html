@@ -10,9 +10,18 @@
       console.log(this)
     }
     function show_coords(event) {
+      console.log(event)
       x = event.clientX
       y = event.clientY
       alert("X 坐标: " + x + ", Y 坐标: " + y)
+    }
+    function upperCase(x) {
+      var y = document.getElementById(x).value
+      document.getElementById(x).value = y.toUpperCase()
+    }
+    function handleChange(e) {
+      log.textContent = `The field's value is
+      ${e.target.value.length} character(s) long.`;
     }
   </script>
 
@@ -23,7 +32,17 @@
     Click me
   </a>
   <button onclick="zz();console.log(1)">button</button>
-  <input type="button" onmousedown="show_coords(event)" name="345">
+  <input type="button" onmousedown="console.log(1);console.log(event)" name="345" value="input">
+  <input type="text" id="fname" onchange="console.log(event)" />
+  <input type="text" id="name" />
+  <script>
+    let input = document.getElementById('name');
+    input.onchange = handleChange;
+    function handleChange(e) {
+      console.log(e)
+    }
+    requestIdleCallback((z) => console.log(z))
+  </script>
 </body>
 
 </html>

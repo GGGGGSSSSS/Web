@@ -10,21 +10,33 @@
 
 <body>
   <script>
-    var zz = 2;
-    function fn1() {
-      var zz = { zz: 3, er: 3 };
+    // var zz = 2;
+    // function fn1() {
+    //   var zz = { zz: 3, er: 3 };
+    //   function z() {
+    //     var er = 3;
+    //     zz.zz = 4;
+    //   }
+
+    //   return z
+    //   fn2(88);
+    // }
+
+    // var z = fn1();
+    // zz = 3;
+    // z();
+    function f() {
+      var a = 0
       function z() {
-        var er = 3;
-        zz.zz = 4;
+        console.log(a)
       }
-
-      return z
-      fn2(88);
+      function x() {
+        a++
+        console.log(a)
+      }
+      return { z, x }
     }
-
-    var z = fn1();
-    zz = 3;
-    z();
+    let { z, x } = f()
   </script>
 </body>
 
